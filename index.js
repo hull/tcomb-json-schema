@@ -35,7 +35,6 @@ var types = {
       predicate = and(predicate, fcomb.regexp(new RegExp(s.pattern)));
     }
     if (s.hasOwnProperty('format')) {
-      t.assert(formats.hasOwnProperty(s.format), 'missing format %s, use the `registerFormat` API', s.format);
       predicate = and(predicate, formats[s.format]);
     }
     return predicate ? subtype(Str, predicate) : Str;
